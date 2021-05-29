@@ -28,6 +28,7 @@ export type Shadows = {
 };
 
 export type Gradients = {
+  farmHeader: string;
   bubblegum: string;
   cardHeader: string;
   blue: string;

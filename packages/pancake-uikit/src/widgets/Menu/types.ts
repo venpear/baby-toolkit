@@ -44,6 +44,7 @@ export interface MenuEntry {
   href?: string;
   calloutClass?: string;
   initialOpenState?: boolean;
+  timeStamp?: any;
   status?: LinkStatus;
 }
 
@@ -55,6 +56,7 @@ export interface PanelProps {
   langs: Language[];
   setLang: (lang: Language) => void;
   links: Array<MenuEntry>;
+  timeStamp?: any;
 }
 
 export interface NavProps extends PanelProps {

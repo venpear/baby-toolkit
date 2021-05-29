@@ -8,6 +8,7 @@ export interface Props {
   secondary?: boolean;
   isActive?: boolean;
   theme: DefaultTheme;
+  timeStamp?: any
 }
 
 const rainbowAnimation = keyframes`
