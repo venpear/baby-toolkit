@@ -45,6 +45,7 @@ export interface MenuEntry {
   calloutClass?: string;
   initialOpenState?: boolean;
   timeStamp?: any;
+  fixedTime?: any;
   status?: LinkStatus;
 }
 

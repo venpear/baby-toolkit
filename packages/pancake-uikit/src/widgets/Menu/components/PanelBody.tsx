@@ -23,8 +23,13 @@ const Container = styled.div`
   height: 100%;
 `;
 
+const StyledTime = styled.div`
+    color: #E28432;
+`
+
 const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
   const location = useLocation();
+  const nowTimeStamp = Math.floor(new Date().getTime() / 1000)
 
   // Close the menu when a user clicks a link on mobile
   const handleClick = isMobile ? () => pushNav(false) : undefined;
@@ -73,7 +78,7 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
             <MenuLink href={entry.href} onClick={handleClick}>
               {iconElement}
               <LinkLabel isPushed={isPushed}>{entry.label}</LinkLabel>
-              {entry.timeStamp && (<Countdown timeStamp={entry.timeStamp} />)}
+              {entry.timeStamp ? nowTimeStamp <= entry.fixedTime?.timeStamp ? <StyledTime>{entry.fixedTime?.text}</StyledTime> : (<Countdown timeStamp={entry.timeStamp} />) : ''}
               {entry.status && (
                 <LinkStatus color={entry.status.color} fontSize="14px">
                   {entry.status.text}

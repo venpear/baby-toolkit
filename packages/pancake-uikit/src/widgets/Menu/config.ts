@@ -23,7 +23,7 @@ export const links = [
   },
   {
     label: "Trade",
-    icon: "TradeIcon",
+    icon: "Bottles",
     items: [
       {
         label: "Exchange",
@@ -50,7 +50,11 @@ export const links = [
     label: "Lottery",
     icon: "IloIcon",
     href: "/lottery",
-    timeStamp: "1742128211"
+    timeStamp: "1622631600",
+    fixedTime: {
+      timeStamp: "1622434537", //秒
+      text: "24:00:00"
+    }
   },
   {
     label: "NFT",
@@ -115,6 +119,11 @@ export const links = [
         href: "/ifo/history",
       },
     ],
+  },
+  {
+    label: "Autit",
+    icon: "AutitIcon",
+    href: "https://www.certik.org/projects/babyswap",
   },
   {
     label: "More",
@@ -203,7 +212,7 @@ export const socials = [
   {
     label: "Twitter",
     icon: "TwitterIcon",
-    href: "@babyswap_bsc",
+    href: "https://twitter.com/babyswap_bsc",
   },
 ];
 

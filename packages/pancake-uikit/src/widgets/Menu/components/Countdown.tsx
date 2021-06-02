@@ -18,8 +18,8 @@ const CountDown = (props: IProps) => {
 
     const [leftTime, setLeftTime] = useState(end - now) // 时间间隔
 
-    const [d, setDays] = useState<any>("") // 小时
-    const [h, setHours] = useState<any>("00") // 小时
+    const [d, setDays] = useState<any>("") // 天
+    const [h, setHours] = useState<any>("24") // 小时
     const [m, setMinutes] = useState<any>("00") // 分钟
     const [s, setSeconds] = useState<any>("00") // 秒
     useEffect(() => {
@@ -30,8 +30,8 @@ const CountDown = (props: IProps) => {
                 const newLeftTime = timeStamp - newNow
                 setLeftTime(() => newLeftTime)  // 计算新的时间间隔数值
 
-                const days = Math.floor(newLeftTime / 60 / 60 / 24 % 7) < 10 ? `0${Math.floor(newLeftTime / 60 / 60 % 24)}` : Math.floor(newLeftTime / 60 / 60 % 24);
-                const hours = Math.floor(newLeftTime / 60 / 60 % 24) < 10 ? `0${Math.floor(newLeftTime / 60 / 60 % 24)}` : Math.floor(newLeftTime / 60 / 60 % 24);
+                const days = Math.floor(newLeftTime / 60 / 60 / 24) < 10 ? `0${Math.floor(newLeftTime / 60 / 60 / 24)}` : Math.floor(newLeftTime / 60 / 60 / 24);
+                const hours = Math.floor(newLeftTime / 60 / 60) < 10 ? `0${Math.floor(newLeftTime / 60 / 60)}` : Math.floor(newLeftTime / 60 / 60);
                 const minutes = Math.floor(newLeftTime / 60 % 60) < 10 ? `0${Math.floor(newLeftTime / 60 % 60)}` : Math.floor(newLeftTime / 60 % 60);
                 const seconds = Math.floor(newLeftTime % 60) < 10 ? `0${Math.floor(newLeftTime % 60)}` : Math.floor(newLeftTime % 60);
                 setDays(() => days)  // 函数写法 设置小时
@@ -53,7 +53,7 @@ const CountDown = (props: IProps) => {
 
     return (
         <>
-            { leftTime <= 0 && ''}
+            { leftTime <= 0 && <StyledTime>00:00:00</StyledTime>}
             { leftTime > 0 && <StyledTime>{`${h}:${m}:${s}`}</StyledTime>}
         </>
     )

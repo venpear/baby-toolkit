@@ -5,6 +5,7 @@ import TrustWallet from "./icons/TrustWallet";
 import WalletConnect from "./icons/WalletConnect";
 import BinanceChain from "./icons/BinanceChain";
 import SafePalWallet from "./icons/SafePalWallet";
+import BitKeep from "./icons/BitKeep";
 import { Config, ConnectorNames } from "./types";
 
 const connectors: Config[] = [
@@ -19,6 +20,11 @@ const connectors: Config[] = [
     connectorId: ConnectorNames.Injected,
   },
   {
+    title: "SafePal Wallet",
+    icon: SafePalWallet,
+    connectorId: ConnectorNames.Injected,
+  },
+  {
     title: "MathWallet",
     icon: MathWallet,
     connectorId: ConnectorNames.Injected,
@@ -29,9 +35,9 @@ const connectors: Config[] = [
     connectorId: ConnectorNames.Injected,
   },
   {
-    title: "WalletConnect",
-    icon: WalletConnect,
-    connectorId: ConnectorNames.WalletConnect,
+    title: "BitKeep",
+    icon: BitKeep,
+    connectorId: ConnectorNames.Injected,
   },
   {
     title: "Binance Chain Wallet",
@@ -39,10 +45,11 @@ const connectors: Config[] = [
     connectorId: ConnectorNames.BSC,
   },
   {
-    title: "SafePal Wallet",
-    icon: SafePalWallet,
-    connectorId: ConnectorNames.Injected,
+    title: "WalletConnect",
+    icon: WalletConnect,
+    connectorId: ConnectorNames.WalletConnect,
   },
+  
 ];
 
 export default connectors;
